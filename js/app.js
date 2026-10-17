@@ -25,7 +25,7 @@ let currentPage = "courses";
 let selectedCapability = "";
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-const stageClass = (stage) => stage === "二階" ? "stage-two" : stage === "三階" ? "stage-three" : "";
+const stageClass = (stage) => stage === "一階" ? "stage-one" : stage === "二階" ? "stage-two" : stage === "三階" ? "stage-three" : "";
 const statusTag = (status) => `<span class="status-label">${esc(status || "建議補充")}</span>`;
 
 async function init(){
@@ -96,7 +96,7 @@ function renderCapabilities(categories){
         <h3>${esc(cap.name)}</h3>
         <p class="capability-overview-description">${esc(cap.description)}</p>
         <div class="capability-course-heading">可透過以下課程學習</div>
-        ${matched.length ? `<ul class="capability-course-list">${matched.map(course=>`<li><span class="capability-course-stage">${esc(course.stage)}</span><span>${esc(course.title)}</span></li>`).join("")}</ul>` : `<p class="capability-empty">相關課程待補充。</p>`}
+        ${matched.length ? `<ul class="capability-course-list">${matched.map(course=>`<li><span class="capability-course-stage ${stageClass(course.stage)}">${esc(course.stage)}</span><span>${esc(course.title)}</span></li>`).join("")}</ul>` : `<p class="capability-empty">相關課程待補充。</p>`}
       </div>
     </article>`;
   }).join("");
@@ -129,7 +129,7 @@ function renderApplicationPanel(){
   if(app.id==="market") matched=allCourses.filter(c=>["邀約與列名單","見證分享破冰技巧","家庭聚會運作(啟動HP)","銷售的最高殿堂-陌生開發","3分鐘公司及事業分享"].includes(c.title));
   if(app.id==="service") matched=allCourses.filter(c=>["產品維護及管理","結合AI的拍背判背技巧","家庭聚會運作(啟動HP)","啟動事業的關鍵 3S"].includes(c.title));
   if(app.id==="organization") matched=allCourses.filter(c=>["從會做，到做大","啟動事業的關鍵 3S","一分鐘演練(自我介紹 產品 見證 公司 事業 五選一)","組織運作與團隊管理","事業經營的正確觀念與態度"].includes(c.title));
-  $("#applicationPanel").innerHTML=`<p class="eyebrow">SUGGESTED LEARNING PATH</p><h3>${esc(app.label)}</h3><p>${esc(app.description)}以下為依課程名稱與初步分類整理的建議課程，實際順序可依教材與學員需求調整。</p><div class="path-courses">${matched.map((c,i)=>`<button type="button" class="path-course" data-course="${c.id}"><span class="path-number">${String(i+1).padStart(2,"0")}</span><strong>${esc(c.title)}</strong><span class="path-arrow" aria-hidden="true">↗</span></button>`).join("")}</div>`;
+  $("#applicationPanel").innerHTML=`<p class="eyebrow">SUGGESTED LEARNING PATH</p><h3>${esc(app.label)}</h3><p>${esc(app.description)}以下為依課程名稱與初步分類整理的建議課程，實際順序可依教材與學員需求調整。</p><div class="path-courses">${matched.map((c,i)=>`<button type="button" class="path-course" data-course="${c.id}"><span class="path-number">${String(i+1).padStart(2,"0")}</span><span class="stage-pill ${stageClass(c.stage)}">${esc(c.stage)}</span><strong>${esc(c.title)}</strong><span class="path-arrow" aria-hidden="true">↗</span></button>`).join("")}</div>`;
 }
 function openCourse(id){
   const c=allCourses.find(course=>course.id===id); if(!c) return;
