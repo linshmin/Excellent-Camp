@@ -24,3 +24,16 @@
 .capability-detail-intro{font-size:12px;color:var(--forest);font-weight:700;margin:22px 0 0}
 .capability-empty{font-size:12px;color:var(--muted);padding:10px 0}
 @media(max-width:650px){.capability-detail{padding:19px}.capability-detail-heading{display:block}.capability-detail-heading .reset-button{margin-top:12px}}
+
+/* 六大能力：獨立的說明式頁面，與課程卡片視覺及互動明確區隔 */
+.capability-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.capability-overview-item{display:grid;grid-template-columns:46px 1fr;gap:16px;padding:25px 26px;background:#fff;border:1px solid #dce4dc;border-radius:12px;min-width:0}
+.capability-overview-number{font-family:"Playfair Display",serif;font-size:25px;color:var(--gold);line-height:1.3;padding-top:1px}
+.capability-overview-body h3{font-size:17px;color:var(--forest);margin:0 0 8px}
+.capability-overview-description{font-size:12px;color:var(--muted);line-height:1.85;margin:0 0 18px}
+.capability-course-heading{font-size:11px;font-weight:700;color:var(--forest);padding-top:13px;border-top:1px solid var(--line);margin-bottom:8px}
+.capability-course-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.capability-course-list li{display:flex;align-items:flex-start;gap:9px;font-size:11px;line-height:1.7;color:#34463d}
+.capability-course-stage{flex:0 0 auto;min-width:34px;text-align:center;padding:2px 6px;border-radius:4px;background:#edf3ee;color:var(--green);font-size:9px;font-weight:700}
+@media(max-width:900px){.capability-overview{grid-template-columns:1fr}}
+@media(max-width:650px){.capability-overview-item{grid-template-columns:34px 1fr;gap:12px;padding:20px 17px}.capability-overview-number{font-size:21px}.capability-overview-body h3{font-size:15px}}

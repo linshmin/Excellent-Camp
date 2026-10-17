@@ -78,19 +78,28 @@ function renderCourses(){
   $("#stageCards").querySelectorAll(".stage-card").forEach(btn=>{btn.classList.toggle("active",btn.dataset.stage===selectedStage);btn.setAttribute("aria-pressed",String(btn.dataset.stage===selectedStage));});
 }
 function renderCapabilities(categories){
+  // 六大能力是獨立的說明頁，不使用三階課程的互動資訊卡，也不需要點選或下拉篩選。
+  const capabilityCourses = {
+    "事業認知與經營心態": ["認識事業及應具備的能力", "事業經營的正確觀念與態度", "相信的力量"],
+    "產品知識與專業服務": ["抗菌系列產品與銷售話術", "產品維護及管理", "體雕衣系列及銷售話術", "結合AI的拍背判背技巧"],
+    "表達、見證與銷售": ["三分鐘自我介紹", "三分鐘產品介紹", "見證分享破冰技巧", "三分鐘演練", "3分鐘公司及事業分享", "一分鐘演練(自我介紹 產品 見證 公司 事業 五選一)"],
+    "客戶開發與邀約": ["邀約與列名單", "銷售的最高殿堂-陌生開發"],
+    "事業運作與服務系統": ["家庭聚會運作(啟動HP)", "啟動事業的關鍵 3S"],
+    "組織運作與團隊管理": ["從會做，到做大", "組織運作與團隊管理"]
+  };
+  const courseByTitle = new Map(allCourses.map(course => [course.title, course]));
   $("#capabilityGrid").innerHTML = CAPABILITY_META.map((cap,i)=>{
-    const count=allCourses.filter(c=>c.category===cap.name).length;
-    return `<button type="button" class="capability-card" data-capability="${esc(cap.name)}"><span class="capability-icon" aria-hidden="true">${cap.icon}</span><span><h3>${esc(cap.name)}</h3><p>${esc(cap.description)}</p><span class="cap-count">${count} 堂主要對應課程 · 點擊查看 →</span></span></button>`;
+    const matched = (capabilityCourses[cap.name] || []).map(title => courseByTitle.get(title)).filter(Boolean);
+    return `<article class="capability-overview-item">
+      <div class="capability-overview-number">0${i+1}</div>
+      <div class="capability-overview-body">
+        <h3>${esc(cap.name)}</h3>
+        <p class="capability-overview-description">${esc(cap.description)}</p>
+        <div class="capability-course-heading">可透過以下課程學習</div>
+        ${matched.length ? `<ul class="capability-course-list">${matched.map(course=>`<li><span class="capability-course-stage">${esc(course.stage)}</span><span>${esc(course.title)}</span></li>`).join("")}</ul>` : `<p class="capability-empty">相關課程待補充。</p>`}
+      </div>
+    </article>`;
   }).join("");
-}
-function renderCapabilityDetail(name){
-  selectedCapability = name;
-  const cap = CAPABILITY_META.find(item=>item.name===name);
-  if(!cap) { $("#capabilityDetail").classList.add("hidden"); return; }
-  const matched = allCourses.filter(c=>c.category===name || (c.skills||[]).includes(name));
-  $("#capabilityDetail").innerHTML = `<div class="capability-detail-heading"><div><p class="eyebrow">CAPABILITY DETAIL</p><h3>${esc(cap.name)}</h3><p>${esc(cap.description)}</p></div><button type="button" class="reset-button" id="clearCapabilityDetail">清除選擇 ×</button></div><p class="capability-detail-intro">以下為與此能力相關的課程：</p><div class="path-courses">${matched.length ? matched.map((c,i)=>`<button type="button" class="path-course" data-course="${c.id}"><span class="path-number">${String(i+1).padStart(2,"0")}</span><strong>${esc(c.title)}</strong><span class="path-arrow" aria-hidden="true">↗</span></button>`).join("") : `<p class="capability-empty">目前沒有直接對應的課程資料，可依正式教材再補充關聯。</p>`}</div>`;
-  $("#capabilityDetail").classList.remove("hidden");
-  $("#capabilityGrid").querySelectorAll("[data-capability]").forEach(btn=>btn.classList.toggle("active",btn.dataset.capability===name));
 }
 function showPage(page, updateHash=true){
   currentPage = page;
@@ -155,8 +164,6 @@ function bindEvents(){
   $("#categoryFilter").addEventListener("change",e=>{selectedCategory=e.target.value;renderCourses();});
   $("#resetFilters").addEventListener("click",()=>{selectedStage="";selectedCategory="";$("#searchInput").value="";$("#categoryFilter").value="";renderCourses();});
   $("#courseGrid").addEventListener("click",e=>{const b=e.target.closest("[data-course]");if(b)openCourse(b.dataset.course);});
-  $("#capabilityGrid").addEventListener("click",e=>{const b=e.target.closest("[data-capability]");if(!b)return;renderCapabilityDetail(b.dataset.capability);});
-  $("#capabilityDetail").addEventListener("click",e=>{const course=e.target.closest("[data-course]");if(course){openCourse(course.dataset.course);return;}if(e.target.closest("#clearCapabilityDetail")){selectedCapability="";$("#capabilityDetail").classList.add("hidden");$("#capabilityGrid").querySelectorAll("[data-capability]").forEach(btn=>btn.classList.remove("active"));}});
   $(".top-nav").addEventListener("click",e=>{const link=e.target.closest("[data-page]");if(!link)return;e.preventDefault();showPage(link.dataset.page);});
   document.querySelectorAll("[data-page]").forEach(link=>{if(link.closest(".top-nav"))return;link.addEventListener("click",e=>{e.preventDefault();showPage(link.dataset.page);});});
   $("#applicationTabs").addEventListener("click",e=>{const b=e.target.closest("[data-app]");if(!b)return;selectedApplication=b.dataset.app;renderApplicationTabs();renderApplicationPanel();});
