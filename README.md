@@ -1,4 +1,4 @@
-# 蓓姿媞事業學習地圖（第一版）
+# 卓越實戰營學習地圖（第一版）
 
 一個可部署到 GitHub Pages 的繁體中文靜態網站。無需後端、無需登入、不保存個人學習紀錄。
 
@@ -12,7 +12,7 @@
 
 ## 檔案結構
 ```text
-beizidi-learning-map/
+excellent-training-camp-learning-map/
 ├── index.html
 ├── .nojekyll
 ├── css/style.css
@@ -30,7 +30,7 @@ python -m http.server 8000
 然後在瀏覽器開啟 `http://localhost:8000`。
 
 ## 部署到 GitHub Pages
-1. 在 GitHub 建立一個新的 Repository，例如 `beizidi-learning-map`。
+1. 在 GitHub 建立一個新的 Repository，例如 `excellent-training-camp-learning-map`。
 2. 將本資料夾內的所有檔案上傳至 Repository 根目錄。
 3. 進入 Repository 的 **Settings → Pages**。
 4. 在 **Build and deployment** 中選擇 **Deploy from a branch**。
@@ -38,7 +38,7 @@ python -m http.server 8000
 6. 等待部署完成，再從 Pages 頁面開啟網站網址。
 
 GitHub Pages 的專案網站網址通常會是：
-`https://你的GitHub帳號.github.io/beizidi-learning-map/`
+`https://你的GitHub帳號.github.io/excellent-training-camp-learning-map/`
 
 ## 如何新增或修改課程
 編輯 `data/courses.json` 的 `courses` 陣列。每堂課包含：
@@ -63,3 +63,9 @@ GitHub Pages 的專案網站網址通常會是：
 ## 第一版限制
 - 沒有登入、後端、資料庫、管理後台或跨裝置學習紀錄。
 - 字體使用 Google Fonts；若無網路，會退回系統字體。
+
+
+## 網站定位與品牌使用
+- 網站名稱使用「卓越實戰營」及「Excellent Training Camp」。
+- 本網站為學員學習整理用途，非任何公司官方網站或官方發布內容。
+- 為避免將原始課程名稱中的公司名稱帶入網站，第一堂課顯示為「認識事業及應具備的能力」。

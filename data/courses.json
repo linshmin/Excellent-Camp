@@ -1,5 +1,5 @@
 {
-  "siteTitle": "蓓姿媞事業學習地圖",
+  "siteTitle": "卓越實戰營學習地圖",
   "siteSubtitle": "從學習課程，到事業實戰",
   "version": "第一版規劃稿",
   "contentPolicy": {
@@ -42,16 +42,16 @@
       "id": "L1-01",
       "stage": "一階",
       "stageLabel": "LEVEL 01 · 基礎建立",
-      "title": "認識蓓姿媞事業及應具備的能力",
+      "title": "認識事業及應具備的能力",
       "category": "事業認知與經營心態",
       "skills": [
         "事業認知",
         "經營心態"
       ],
-      "sourceStatus": "原始課程名稱：使用者提供",
+      "sourceStatus": "依學習網站去品牌化需求調整標題；其餘課程名稱依提供清單保留。",
       "learningPurpose": {
         "status": "建議補充",
-        "text": "協助學員理解蓓姿媞事業的基本架構，並盤點投入事業經營所需的基礎能力。"
+        "text": "協助學員理解事業的基本架構，並盤點投入事業經營所需的基礎能力。"
       },
       "expectedAbility": {
         "status": "建議補充",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Beizidi Learning Map Course Data",
+  "title": "Excellent Training Camp Learning Map Course Data",
   "type": "object",
   "required": [
     "siteTitle",
