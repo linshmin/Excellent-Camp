@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c35">
+  <meta name="description" content="蓓姿媞事業學習地圖：探索一階、二階、三階課程，了解學習目的、能力與事業應用。">
+  <title>蓓姿媞事業學習地圖</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="蓓姿媞事業學習地圖首頁">
+      <span class="brand-mark">B</span>
+      <span><strong>BEIZIDI</strong><small>BUSINESS LEARNING MAP</small></span>
+    </a>
+    <nav class="top-nav" aria-label="主要導覽">
+      <a href="#learning-map">三階課程</a>
+      <a href="#capabilities">六大能力</a>
+      <a href="#application-paths">事業應用</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> LEARN · APPLY · GROW</p>
+        <h1>蓓姿媞事業<br><em>學習地圖</em></h1>
+        <p class="hero-lede">從學習一堂課，到掌握一套事業經營方法。</p>
+        <p class="hero-description">把三階課程連結到實際能力，讓每一次學習，都更知道下一步如何應用。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#learning-map">探索課程 <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#application-paths">我想解決一個經營問題 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="學習、應用、成長的示意圖">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-center">
+          <span class="hero-center-icon">✦</span>
+          <strong>持續學習</strong>
+          <small>從知識到行動</small>
+        </div>
+        <div class="orbit-node node-one"><span>01</span><strong>學習</strong><small>建立基礎</small></div>
+        <div class="orbit-node node-two"><span>02</span><strong>應用</strong><small>實際練習</small></div>
+        <div class="orbit-node node-three"><span>03</span><strong>成長</strong><small>帶動團隊</small></div>
+        <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+      </div>
+      <div class="hero-footer"><span>FOUNDATION</span><span>→</span><span>PRACTICE</span><span>→</span><span>GROWTH</span></div>
+    </section>
+
+    <section class="section section-map" id="learning-map">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / LEARNING JOURNEY</p><h2>三階課程地圖</h2></div>
+        <p>依照學習階段探索課程，也可以直接搜尋你想複習的主題。</p>
+      </div>
+      <div class="stage-grid" id="stageCards" aria-label="選擇學習階段"></div>
+      <div class="course-toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜尋課程名稱、能力或關鍵字…" autocomplete="off"><kbd>/</kbd></label>
+        <label class="select-wrap"><span class="sr-only">能力分類</span><select id="categoryFilter"><option value="">所有能力分類</option></select></label>
+        <button class="reset-button" id="resetFilters" type="button">清除篩選 ↺</button>
+      </div>
+      <div class="results-bar"><span id="resultCount">載入課程中…</span><span class="results-note">點選課程卡片，查看學習目的與應用建議</span></div>
+      <div class="course-grid" id="courseGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>找不到符合的課程</h3><p>試試其他關鍵字，或清除篩選條件。</p></div>
+    </section>
+
+    <section class="section capabilities-section" id="capabilities">
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / CORE CAPABILITIES</p><h2>六大事業經營能力</h2></div>
+        <p>課程也可以從能力角度理解。選擇一項能力，查看相關課程。</p>
+      </div>
+      <div class="capability-grid" id="capabilityGrid"></div>
+      <p class="micro-note">能力分類為網站整理建議，課程可能同時對應多項能力；正式分類可依課程負責人確認後調整。</p>
+    </section>
+
+    <section class="section application-section" id="application-paths">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 / APPLY IN BUSINESS</p><h2>從經營問題找到課程</h2></div>
+        <p>當你遇到實際問題，不必記住所有課程名稱；從想提升的能力開始找。</p>
+      </div>
+      <div class="application-layout">
+        <div class="application-tabs" id="applicationTabs" role="tablist" aria-label="事業應用情境"></div>
+        <div class="application-panel" id="applicationPanel" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <section class="closing-banner">
+      <div><p class="eyebrow">LEARNING NEVER STOPS</p><h2>學會一項能力，<br>就多一種前進的方法。</h2><p>回到課程、練習、應用，再把經驗分享給夥伴。</p></div>
+      <a class="button button-light" href="#learning-map">回到課程地圖 ↑</a>
+      <span class="closing-decoration">B.</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="#"><span class="brand-mark">B</span><span><strong>BEIZIDI</strong><small>BUSINESS LEARNING MAP</small></span></a>
+    <p>蓓姿媞事業學習地圖 · 第一版</p>
+    <p class="footer-disclaimer">課程名稱依原始清單呈現；學習目的與應用建議仍需依正式教材確認。</p>
+  </footer>
+
+  <dialog id="courseDialog" class="course-dialog">
+    <div class="dialog-top"><span id="dialogStage" class="stage-pill">一階</span><button class="icon-button" id="closeDialog" aria-label="關閉課程詳情">×</button></div>
+    <div id="dialogContent"></div>
+  </dialog>
+  <div class="dialog-backdrop hidden" id="dialogBackdrop"></div>
+  <noscript><div class="noscript-message">此網站需要啟用 JavaScript 才能使用課程搜尋與互動功能。</div></noscript>
+  <script src="js/app.js"></script>
+</body>
+</html>

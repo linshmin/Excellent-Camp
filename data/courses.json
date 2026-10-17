@@ -1,0 +1,955 @@
+{
+  "siteTitle": "蓓姿媞事業學習地圖",
+  "siteSubtitle": "從學習課程，到事業實戰",
+  "version": "第一版規劃稿",
+  "contentPolicy": {
+    "originalCourseNames": "依使用者提供的課程名稱保留；不擅自改寫為其他正式名稱。",
+    "suggestedContent": "學習目的、預期能力、應用情境、練習與自我檢核目前均為網站建議補充，需由課程負責人依正式教材審閱確認。",
+    "duplicateNote": "原始三階清單中「組織運作與團隊管理」重複列出一次；網站總覽以一個課程項目呈現，避免重複顯示，未改動課程名稱。"
+  },
+  "categories": [
+    "事業認知與經營心態",
+    "產品知識與專業服務",
+    "表達、見證與銷售",
+    "客戶開發與邀約",
+    "事業運作與服務系統",
+    "組織運作與團隊管理"
+  ],
+  "applicationPaths": [
+    {
+      "id": "sales",
+      "label": "銷售與客戶溝通",
+      "description": "從產品理解、表達、見證到客戶服務。"
+    },
+    {
+      "id": "market",
+      "label": "市場開發與邀約",
+      "description": "從名單、邀約、初次互動到陌生開發。"
+    },
+    {
+      "id": "service",
+      "label": "客戶服務與持續經營",
+      "description": "從產品維護、體驗服務到持續追蹤。"
+    },
+    {
+      "id": "organization",
+      "label": "組織發展與團隊管理",
+      "description": "從個人能力、示範演練到團隊帶領。"
+    }
+  ],
+  "courses": [
+    {
+      "id": "L1-01",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "認識蓓姿媞事業及應具備的能力",
+      "category": "事業認知與經營心態",
+      "skills": [
+        "事業認知",
+        "經營心態"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "協助學員理解蓓姿媞事業的基本架構，並盤點投入事業經營所需的基礎能力。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能說明自己對事業的理解，並列出需要持續練習的能力。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於初次事業介紹前的準備，先釐清自身角色與可提供的價值。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於整理目標客群、初次接觸前的準備與邀約方向。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議帶領夥伴盤點能力差距，協助新夥伴安排後續學習順序。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L1-02",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "事業經營的正確觀念與態度",
+      "category": "事業認知與經營心態",
+      "skills": [
+        "經營觀念",
+        "持續行動"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "協助學員建立對事業經營的基本認知與持續學習的態度。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能說出自己的經營目標，並規劃可執行的日常行動。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議將正確觀念落實在誠實介紹、理解需求與持續服務上。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議以固定的名單整理、邀約與追蹤節奏，避免只憑一時熱情行動。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議主管以身作則，陪伴夥伴建立穩定且可持續的行動習慣。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L1-03",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "三分鐘自我介紹",
+      "category": "表達、見證與銷售",
+      "skills": [
+        "自我介紹",
+        "表達溝通"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "練習在有限時間內，清楚介紹自己與建立初步連結。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能完成一段簡潔、有重點且自然的自我介紹。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於初次見面、客戶交流或產品介紹前的暖身。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於陌生接觸、活動交流與邀約前的第一段對話。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議作為新夥伴的基礎演練項目，透過回饋持續修正。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L1-04",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "三分鐘產品介紹",
+      "category": "表達、見證與銷售",
+      "skills": [
+        "產品介紹",
+        "表達溝通"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "練習在有限時間內清楚介紹產品資訊，開啟後續溝通。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能有條理地介紹產品，並依對方反應調整說明方式。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於產品介紹、客戶諮詢與體驗前說明；具體產品資訊應以正式教材為準。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於新客戶初次接觸後的產品說明，作為後續邀約或體驗的起點。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議示範給新夥伴並安排短講演練，建立團隊一致的基本表達能力。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L1-05",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "邀約與列名單",
+      "category": "客戶開發與邀約",
+      "skills": [
+        "名單整理",
+        "邀約"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "建立可持續執行的名單整理與邀約習慣。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能整理潛在互動對象，並設計自然、清楚的邀約方式。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於安排產品說明、體驗或後續客戶交流。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於拓展人際接觸、規劃邀約順序及記錄後續跟進。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議帶領夥伴定期檢視邀約行動與經驗，提供具體回饋。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L1-06",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "抗菌系列產品與銷售話術",
+      "category": "產品知識與專業服務",
+      "skills": [
+        "產品知識",
+        "銷售表達"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "熟悉抗菌系列產品的正式資訊，練習以清楚、負責任的方式介紹產品。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能依正式產品資料說明特色，避免誇大或未經證實的功效宣稱。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於產品介紹與客戶疑問回應，所有產品說明以核准資料及正式教材為準。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於開發客戶時的產品溝通，先了解需求再選擇適切資訊。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議以正式教材作為團隊練習依據，統一資訊並持續修正話術。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L1-07",
+      "stage": "一階",
+      "stageLabel": "LEVEL 01 · 基礎建立",
+      "title": "產品維護及管理",
+      "category": "產品知識與專業服務",
+      "skills": [
+        "產品維護",
+        "客戶服務"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "了解產品維護與管理的重要性，建立清楚的產品使用及照護溝通習慣。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能依正式產品說明提供適當的維護資訊。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於成交後的產品說明與服務；實際指引以產品標示及正式教材為準。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議作為持續服務與客戶關係維護的一部分。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議整理常見問題與正式回答，協助團隊提供一致的服務資訊。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L2-01",
+      "stage": "二階",
+      "stageLabel": "LEVEL 02 · 實戰提升",
+      "title": "相信的力量",
+      "category": "事業認知與經營心態",
+      "skills": [
+        "信念",
+        "溝通"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "引導學員理解信念與行動之間的關係，並反思自己如何傳達信任。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能辨識自己的信念如何影響表達與行動。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議在銷售溝通中以真誠、尊重與實際資訊建立信任。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議在市場互動中先建立關係，不以強迫方式要求對方接受。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議主管透過傾聽與示範，陪伴夥伴建立信心與行動意願。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L2-02",
+      "stage": "二階",
+      "stageLabel": "LEVEL 02 · 實戰提升",
+      "title": "見證分享破冰技巧",
+      "category": "表達、見證與銷售",
+      "skills": [
+        "見證分享",
+        "破冰"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "練習運用真實經驗開啟對話，降低交流時的陌生感。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能清楚分享個人經驗，並尊重他人不同的感受與選擇。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議分享真實、可查證的個人經驗，不把個人感受當成普遍保證。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於活動、聚會或初次交流中的破冰與話題延伸。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議鼓勵夥伴練習真實分享，並協助確認內容清楚且不誇大。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L2-03",
+      "stage": "二階",
+      "stageLabel": "LEVEL 02 · 實戰提升",
+      "title": "三分鐘演練",
+      "category": "表達、見證與銷售",
+      "skills": [
+        "口語演練",
+        "表達能力"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "透過限時演練，提升口語表達的流暢度與重點掌握。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能在限定時間內完成指定主題的表達，並依回饋改善。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於產品、見證或服務情境的短講練習。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於邀約前的說明練習與活動中的簡短分享。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議建立夥伴互評流程，針對清楚度、真誠度與時間掌握給予回饋。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L2-04",
+      "stage": "二階",
+      "stageLabel": "LEVEL 02 · 實戰提升",
+      "title": "體雕衣系列及銷售話術",
+      "category": "產品知識與專業服務",
+      "skills": [
+        "產品知識",
+        "銷售表達"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "熟悉體雕衣系列的正式產品資訊，練習清楚說明產品特色與使用注意事項。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能依正式資料介紹產品，並針對客戶需求提供適切資訊。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於產品介紹、試穿溝通與後續服務；具體資訊以正式教材為準。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於體驗活動的邀約與說明，不以未經證實的結果作保證。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議使用統一的正式教材進行團隊演練，確保產品資訊一致。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L2-05",
+      "stage": "二階",
+      "stageLabel": "LEVEL 02 · 實戰提升",
+      "title": "結合AI的拍背判背技巧",
+      "category": "產品知識與專業服務",
+      "skills": [
+        "AI工具應用",
+        "服務流程"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "理解課程所教授的AI拍背判背流程及其在服務情境中的應用方式。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能依正式訓練流程操作並清楚說明評測的範圍與限制。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於服務流程的輔助溝通；不可將評測結果當作醫療診斷或治療建議。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議作為體驗服務的溝通入口，先取得對方同意並尊重個人隱私。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議主管確認夥伴接受正式訓練，並依核准流程使用工具與解釋結果。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L2-06",
+      "stage": "二階",
+      "stageLabel": "LEVEL 02 · 實戰提升",
+      "title": "家庭聚會運作(啟動HP)",
+      "category": "事業運作與服務系統",
+      "skills": [
+        "家庭聚會",
+        "流程運作"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "了解家庭聚會的目的與基本運作方式，讓邀約、分享與後續互動有清楚安排。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能理解聚會中的角色分工，並依正式教材進行準備。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於產品體驗、見證分享與客戶交流，尊重參與者意願。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於邀約潛在客戶與夥伴參與小型交流活動。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議透過分工、流程檢核與活動後追蹤，培養團隊活動執行能力。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L3-01",
+      "stage": "三階",
+      "stageLabel": "LEVEL 03 · 事業拓展",
+      "title": "從會做，到做大",
+      "category": "組織運作與團隊管理",
+      "skills": [
+        "事業拓展",
+        "複製能力"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "協助學員思考如何從個人執行，進一步建立可分享、可協作的經營方法。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能辨識個人經營與團隊發展所需能力的差異。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議將已熟悉的銷售與服務流程整理成可示範的步驟。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議檢視市場開發方式是否能持續執行，並與夥伴共同拓展。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議建立示範、陪練、回饋與追蹤的帶領節奏。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L3-02",
+      "stage": "三階",
+      "stageLabel": "LEVEL 03 · 事業拓展",
+      "title": "銷售的最高殿堂-陌生開發",
+      "category": "客戶開發與邀約",
+      "skills": [
+        "陌生開發",
+        "建立關係"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "提升面對陌生對象時開啟對話、理解需求與建立後續聯繫的能力。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能規劃陌生開發流程，並以尊重、清楚的方式進行接觸。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議以需求了解與合適的產品資訊為主，不以誇大承諾促成交易。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於開拓新客群、建立初次互動與規劃後續跟進。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議團隊分享實際案例與學習心得，逐步整理可複用的開發方法。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L3-03",
+      "stage": "三階",
+      "stageLabel": "LEVEL 03 · 事業拓展",
+      "title": "啟動事業的關鍵 3S",
+      "category": "事業運作與服務系統",
+      "skills": [
+        "Share",
+        "Sponsor",
+        "Service"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "協助學員理解課程中的3S架構，並依正式教材連結銷售分享、邀請同行夥伴與服務。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能依正式課程定義說明3S各項內容，並規劃相應行動。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議以Share對應銷售與分享，具體做法須以正式課程教材為準。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議以Sponsor對應邀請同行夥伴，並以Service規劃後續服務與追蹤；細節以正式教材為準。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議主管以3S作為討論經營行動的架構，避免只看單一銷售結果。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L3-04",
+      "stage": "三階",
+      "stageLabel": "LEVEL 03 · 事業拓展",
+      "title": "3分鐘公司及事業分享",
+      "category": "表達、見證與銷售",
+      "skills": [
+        "公司分享",
+        "事業分享"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "練習在三分鐘內有條理地分享公司與事業相關資訊。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能依正式教材整理分享架構，清楚表達重點。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於客戶或合作對象詢問公司與事業時的簡短說明。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於市場交流、活動場合或後續邀約前的事業介紹。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議作為團隊共通的演練項目，並依聽眾反應持續改善。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L3-05",
+      "stage": "三階",
+      "stageLabel": "LEVEL 03 · 事業拓展",
+      "title": "一分鐘演練(自我介紹 產品 見證 公司 事業 五選一)",
+      "category": "表達、見證與銷售",
+      "skills": [
+        "一分鐘表達",
+        "即席演練"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "訓練學員在一分鐘內，針對指定主題抓住核心並清楚表達。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能從自我介紹、產品、見證、公司、事業五類主題中選一項完成演練。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議用於短時間產品或經驗分享，並以真實、清楚的內容為原則。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議用於陌生交流、活動場合或快速開啟對話的練習。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議用於團隊例行演練與回饋，強化夥伴即席表達的信心。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    },
+    {
+      "id": "L3-06",
+      "stage": "三階",
+      "stageLabel": "LEVEL 03 · 事業拓展",
+      "title": "組織運作與團隊管理",
+      "category": "組織運作與團隊管理",
+      "skills": [
+        "團隊帶領",
+        "組織運作"
+      ],
+      "sourceStatus": "原始課程名稱：使用者提供",
+      "learningPurpose": {
+        "status": "建議補充",
+        "text": "協助學員理解組織運作與團隊管理的重要面向。"
+      },
+      "expectedAbility": {
+        "status": "建議補充",
+        "text": "建議學員能規劃團隊溝通、陪伴、回饋與行動追蹤方式。"
+      },
+      "applications": {
+        "sales": {
+          "status": "建議補充",
+          "text": "建議透過分工與合作改善客戶服務流程。"
+        },
+        "market": {
+          "status": "建議補充",
+          "text": "建議將市場開發行動拆解為可執行步驟，讓夥伴共同實踐。"
+        },
+        "organization": {
+          "status": "建議補充",
+          "text": "建議運用固定交流、具體鼓勵、理解夥伴期待與主動回報等方式帶領團隊；應以正式教材確認為準。"
+        }
+      },
+      "practice": {
+        "status": "建議補充",
+        "text": "建議依本堂課的正式教材設計一次實作練習，並由講師或夥伴提供具體回饋。"
+      },
+      "selfCheck": {
+        "status": "建議補充",
+        "items": [
+          "我能說明這堂課的核心重點",
+          "我能在實際情境中示範這項能力",
+          "我知道遇到困難時可以如何複習與改善"
+        ]
+      },
+      "relatedCourses": [],
+      "notes": []
+    }
+  ]
+}

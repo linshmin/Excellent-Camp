@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Beizidi Learning Map Course Data",
+  "type": "object",
+  "required": [
+    "siteTitle",
+    "courses",
+    "categories",
+    "applicationPaths"
+  ],
+  "properties": {
+    "siteTitle": {
+      "type": "string"
+    },
+    "siteSubtitle": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "contentPolicy": {
+      "type": "object"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applicationPaths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "description"
+        ]
+      }
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "stage",
+          "title",
+          "category",
+          "skills",
+          "learningPurpose",
+          "expectedAbility",
+          "applications"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "stage": {
+            "enum": [
+              "一階",
+              "二階",
+              "三階"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "learningPurpose": {
+            "type": "object",
+            "required": [
+              "status",
+              "text"
+            ]
+          },
+          "expectedAbility": {
+            "type": "object",
+            "required": [
+              "status",
+              "text"
+            ]
+          },
+          "applications": {
+            "type": "object"
+          },
+          "practice": {
+            "type": "object"
+          },
+          "selfCheck": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}
