@@ -129,7 +129,7 @@ function renderApplicationPanel(){
   if(app.id==="market") matched=allCourses.filter(c=>["邀約與列名單","見證分享破冰技巧","家庭聚會運作(啟動HP)","銷售的最高殿堂-陌生開發","3分鐘公司及事業分享"].includes(c.title));
   if(app.id==="service") matched=allCourses.filter(c=>["產品維護及管理","結合AI的拍背判背技巧","家庭聚會運作(啟動HP)","啟動事業的關鍵 3S"].includes(c.title));
   if(app.id==="organization") matched=allCourses.filter(c=>["從會做，到做大","啟動事業的關鍵 3S","一分鐘演練(自我介紹 產品 見證 公司 事業 五選一)","組織運作與團隊管理","事業經營的正確觀念與態度"].includes(c.title));
-  $("#applicationPanel").innerHTML=`<p class="eyebrow">SUGGESTED LEARNING PATH</p><h3>${esc(app.label)}</h3><p>${esc(app.description)}以下為依課程名稱與初步分類整理的建議課程，實際順序可依教材與學員需求調整。</p><div class="path-courses">${matched.map((c,i)=>`<button type="button" class="path-course" data-course="${c.id}"><span class="path-number">${String(i+1).padStart(2,"0")}</span><span class="stage-pill ${stageClass(c.stage)}">${esc(c.stage)}</span><strong>${esc(c.title)}</strong><span class="path-arrow" aria-hidden="true">↗</span></button>`).join("")}</div>`;
+  $("#applicationPanel").innerHTML=`<p class="eyebrow">SUGGESTED LEARNING PATH</p><h3>${esc(app.label)}</h3><p>${esc(app.description)}以下為依課程名稱與初步分類整理的建議課程，實際順序可依教材與學員需求調整。</p><div class="path-courses">${matched.map((c,i)=>`<div class="path-course"><span class="path-number">${String(i+1).padStart(2,"0")}</span><span class="stage-pill ${stageClass(c.stage)}">${esc(c.stage)}</span><strong>${esc(c.title)}</strong></div>`).join("")}</div>`;
 }
 function openCourse(id){
   const c=allCourses.find(course=>course.id===id); if(!c) return;
@@ -167,7 +167,6 @@ function bindEvents(){
   $(".top-nav").addEventListener("click",e=>{const link=e.target.closest("[data-page]");if(!link)return;e.preventDefault();showPage(link.dataset.page);});
   document.querySelectorAll("[data-page]").forEach(link=>{if(link.closest(".top-nav"))return;link.addEventListener("click",e=>{e.preventDefault();showPage(link.dataset.page);});});
   $("#applicationTabs").addEventListener("click",e=>{const b=e.target.closest("[data-app]");if(!b)return;selectedApplication=b.dataset.app;renderApplicationTabs();renderApplicationPanel();});
-  $("#applicationPanel").addEventListener("click",e=>{const b=e.target.closest("[data-course]");if(b)openCourse(b.dataset.course);});
   $("#backToCourses").addEventListener("click",closeCourse);
   window.addEventListener("hashchange",()=>{const hash=location.hash;showPage(hash==="#capabilities"?"capabilities":hash==="#application-paths"?"applications":"courses",false);});
   document.addEventListener("keydown",e=>{if(e.key==="/" && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)){e.preventDefault();if(currentPage==="courses")$("#searchInput").focus();}});
