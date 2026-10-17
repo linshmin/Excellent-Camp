@@ -7,4 +7,9 @@ export default defineConfig({
     host: '0.0.0.0',
     allowedHosts: ['terminal.local'],
   },
+  build: {
+    rollupOptions: {
+      input: ['index.html', 'abilities.html', 'applications.html'],
+    },
+  },
 });
