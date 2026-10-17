@@ -94,8 +94,6 @@ function renderApplicationPanel(){
 }
 function openCourse(id){
   const c=allCourses.find(course=>course.id===id); if(!c) return;
-  $("#dialogStage").textContent=`${c.stage} · ${STAGES.find(s=>s.id===c.stage)?.title||""}`;
-  $("#dialogStage").className=`stage-pill ${stageClass(c.stage)}`;
   const app=c.applications||{};
   const sections=[
     ["01","學習目的",c.learningPurpose?.text,c.learningPurpose?.status],
@@ -105,21 +103,25 @@ function openCourse(id){
     ["05","組織發展與團隊管理",app.organization?.text,app.organization?.status],
     ["06","建議實際練習",c.practice?.text,c.practice?.status]
   ];
-  $("#dialogContent").innerHTML=`<div class="dialog-content-inner">
-    <p class="eyebrow">COURSE DETAIL / ${esc(c.id)}</p><h2>${esc(c.title)}</h2><p class="dialog-category">${esc(c.category)}　·　${esc((c.skills||[]).join(" / "))}</p>
-    <div class="source-notice"><strong>內容來源說明</strong><br>課程名稱：依使用者提供的原始課程清單。下方學習目的、能力與應用內容目前均為「建議補充」，尚待依正式教材審閱確認。</div>
+  $("#detailViewContent").innerHTML=`<div class="dialog-content-inner course-detail-inner">
+    <p class="eyebrow">COURSE DETAIL / ${esc(c.id)}</p><span class="stage-pill ${stageClass(c.stage)}">${esc(c.stage)} · ${esc(STAGES.find(s=>s.id===c.stage)?.title||"")}</span><h2>${esc(c.title)}</h2><p class="dialog-category">${esc(c.category)}　·　${esc((c.skills||[]).join(" / "))}</p>
+    <div class="source-notice"><strong>內容來源說明</strong><br>課程名稱依提供的原始課程清單整理；下方學習目的、能力與應用內容目前均為「建議補充」，尚待依正式教材審閱確認。</div>
     ${sections.map(([n,title,text,status])=>`<section class="detail-section"><h3><span class="detail-index">${n}</span>${esc(title)}${statusTag(status)}</h3><p>${esc(text||"待依正式教材補充。")}</p></section>`).join("")}
     <section class="detail-section"><h3><span class="detail-index">07</span>學習成果自我檢核${statusTag(c.selfCheck?.status)}</h3><div class="check-list">${(c.selfCheck?.items||[]).map((item,i)=>`<label><input type="checkbox" aria-label="${esc(item)}"> <span>${esc(item)}</span></label>`).join("")}</div><p style="font-size:10px;color:#8a958d;margin-top:10px">此檢核僅在目前瀏覽器頁面暫時生效，重新載入後不會保存。</p></section>
     <section class="detail-section"><h3><span class="detail-index">08</span>建議關聯能力</h3><div class="dialog-related">${(c.skills||[]).map(skill=>`<span class="related-chip">${esc(skill)}</span>`).join("")}</div></section>
   </div>`;
-  const dialog=$("#courseDialog");
-  $("#dialogBackdrop").classList.remove("hidden");
-  if(typeof dialog.showModal==="function") dialog.showModal(); else dialog.setAttribute("open","");
+  document.querySelectorAll("main > *").forEach(section=>section.classList.toggle("hidden",section.id!=="courseDetailView"));
+  $("#courseDetailView").classList.remove("hidden");
+  $(".top-nav").classList.add("hidden");
+  $(".site-footer").classList.add("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 function closeCourse(){
-  const dialog=$("#courseDialog");
-  if(typeof dialog.close==="function" && dialog.open) dialog.close(); else dialog.removeAttribute("open");
-  $("#dialogBackdrop").classList.add("hidden");
+  document.querySelectorAll("main > *").forEach(section=>section.classList.toggle("hidden",section.id==="courseDetailView"));
+  $("#courseDetailView").classList.add("hidden");
+  $(".top-nav").classList.remove("hidden");
+  $(".site-footer").classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 function bindEvents(){
   $("#stageCards").addEventListener("click",e=>{const b=e.target.closest("[data-stage]");if(!b)return;selectedStage=selectedStage===b.dataset.stage?"":b.dataset.stage;renderCourses();});
@@ -130,9 +132,7 @@ function bindEvents(){
   $("#capabilityGrid").addEventListener("click",e=>{const b=e.target.closest("[data-capability]");if(!b)return;selectedCategory=b.dataset.capability;$("#categoryFilter").value=selectedCategory;selectedStage="";renderCourses();$("#learning-map").scrollIntoView({behavior:"smooth"});});
   $("#applicationTabs").addEventListener("click",e=>{const b=e.target.closest("[data-app]");if(!b)return;selectedApplication=b.dataset.app;renderApplicationTabs();renderApplicationPanel();});
   $("#applicationPanel").addEventListener("click",e=>{const b=e.target.closest("[data-course]");if(b)openCourse(b.dataset.course);});
-  $("#closeDialog").addEventListener("click",closeCourse);
-  $("#dialogBackdrop").addEventListener("click",closeCourse);
-  $("#courseDialog").addEventListener("click",e=>{if(e.target===$("#courseDialog"))closeCourse();});
+  $("#backToCourses").addEventListener("click",closeCourse);
   document.addEventListener("keydown",e=>{if(e.key==="/" && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)){e.preventDefault();$("#searchInput").focus();}});
 }
 init();
