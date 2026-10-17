@@ -21,6 +21,8 @@ let allCourses = [];
 let selectedStage = "";
 let selectedCategory = "";
 let selectedApplication = "sales";
+let currentPage = "courses";
+let selectedCapability = "";
 const $ = (selector) => document.querySelector(selector);
 const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const stageClass = (stage) => stage === "二階" ? "stage-two" : stage === "三階" ? "stage-three" : "";
@@ -39,6 +41,7 @@ async function init(){
     renderCourses();
     renderApplicationPanel();
     bindEvents();
+    showPage((location.hash === "#capabilities" ? "capabilities" : location.hash === "#application-paths" ? "applications" : "courses"), false);
   } catch(error) {
     $("#resultCount").textContent = "課程資料載入失敗";
     $("#courseGrid").innerHTML = `<div class="empty-state"><h3>無法載入課程資料</h3><p>請確認網站根目錄有 data/courses.json，並透過 GitHub Pages 或本機伺服器開啟。</p></div>`;
@@ -80,6 +83,33 @@ function renderCapabilities(categories){
     return `<button type="button" class="capability-card" data-capability="${esc(cap.name)}"><span class="capability-icon" aria-hidden="true">${cap.icon}</span><span><h3>${esc(cap.name)}</h3><p>${esc(cap.description)}</p><span class="cap-count">${count} 堂主要對應課程 · 點擊查看 →</span></span></button>`;
   }).join("");
 }
+function renderCapabilityDetail(name){
+  selectedCapability = name;
+  const cap = CAPABILITY_META.find(item=>item.name===name);
+  if(!cap) { $("#capabilityDetail").classList.add("hidden"); return; }
+  const matched = allCourses.filter(c=>c.category===name || (c.skills||[]).includes(name));
+  $("#capabilityDetail").innerHTML = `<div class="capability-detail-heading"><div><p class="eyebrow">CAPABILITY DETAIL</p><h3>${esc(cap.name)}</h3><p>${esc(cap.description)}</p></div><button type="button" class="reset-button" id="clearCapabilityDetail">清除選擇 ×</button></div><p class="capability-detail-intro">以下為與此能力相關的課程：</p><div class="path-courses">${matched.length ? matched.map((c,i)=>`<button type="button" class="path-course" data-course="${c.id}"><span class="path-number">${String(i+1).padStart(2,"0")}</span><strong>${esc(c.title)}</strong><span class="path-arrow" aria-hidden="true">↗</span></button>`).join("") : `<p class="capability-empty">目前沒有直接對應的課程資料，可依正式教材再補充關聯。</p>`}</div>`;
+  $("#capabilityDetail").classList.remove("hidden");
+  $("#capabilityGrid").querySelectorAll("[data-capability]").forEach(btn=>btn.classList.toggle("active",btn.dataset.capability===name));
+}
+function showPage(page, updateHash=true){
+  currentPage = page;
+  const pageClass = page === "capabilities" ? "page-capabilities" : page === "applications" ? "page-applications" : "page-courses";
+  document.querySelectorAll("main > .page-section").forEach(section=>section.classList.toggle("hidden", !section.classList.contains(pageClass)));
+  $("#courseDetailView").classList.add("hidden");
+  $(".top-nav").classList.remove("hidden");
+  $(".site-footer").classList.remove("hidden");
+  document.querySelectorAll(".top-nav [data-page]").forEach(link=>{
+    const active = link.dataset.page===page;
+    link.classList.toggle("active",active);
+    if(active) link.setAttribute("aria-current","page"); else link.removeAttribute("aria-current");
+  });
+  if(updateHash){
+    const hash = page === "capabilities" ? "#capabilities" : page === "applications" ? "#application-paths" : "#learning-map";
+    history.replaceState(null,"",hash);
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 function renderApplicationTabs(){
   $("#applicationTabs").innerHTML = APPLICATIONS.map(app=>`<button type="button" role="tab" aria-selected="${selectedApplication===app.id}" class="application-tab ${selectedApplication===app.id?"active":""}" data-app="${app.id}"><span aria-hidden="true">${app.icon}</span>${esc(app.label)}</button>`).join("");
 }
@@ -117,11 +147,7 @@ function openCourse(id){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 function closeCourse(){
-  document.querySelectorAll("main > *").forEach(section=>section.classList.toggle("hidden",section.id==="courseDetailView"));
-  $("#courseDetailView").classList.add("hidden");
-  $(".top-nav").classList.remove("hidden");
-  $(".site-footer").classList.remove("hidden");
-  window.scrollTo({top:0,behavior:"smooth"});
+  showPage(currentPage, false);
 }
 function bindEvents(){
   $("#stageCards").addEventListener("click",e=>{const b=e.target.closest("[data-stage]");if(!b)return;selectedStage=selectedStage===b.dataset.stage?"":b.dataset.stage;renderCourses();});
@@ -129,10 +155,14 @@ function bindEvents(){
   $("#categoryFilter").addEventListener("change",e=>{selectedCategory=e.target.value;renderCourses();});
   $("#resetFilters").addEventListener("click",()=>{selectedStage="";selectedCategory="";$("#searchInput").value="";$("#categoryFilter").value="";renderCourses();});
   $("#courseGrid").addEventListener("click",e=>{const b=e.target.closest("[data-course]");if(b)openCourse(b.dataset.course);});
-  $("#capabilityGrid").addEventListener("click",e=>{const b=e.target.closest("[data-capability]");if(!b)return;selectedCategory=b.dataset.capability;$("#categoryFilter").value=selectedCategory;selectedStage="";renderCourses();$("#learning-map").scrollIntoView({behavior:"smooth"});});
+  $("#capabilityGrid").addEventListener("click",e=>{const b=e.target.closest("[data-capability]");if(!b)return;renderCapabilityDetail(b.dataset.capability);});
+  $("#capabilityDetail").addEventListener("click",e=>{const course=e.target.closest("[data-course]");if(course){openCourse(course.dataset.course);return;}if(e.target.closest("#clearCapabilityDetail")){selectedCapability="";$("#capabilityDetail").classList.add("hidden");$("#capabilityGrid").querySelectorAll("[data-capability]").forEach(btn=>btn.classList.remove("active"));}});
+  $(".top-nav").addEventListener("click",e=>{const link=e.target.closest("[data-page]");if(!link)return;e.preventDefault();showPage(link.dataset.page);});
+  document.querySelectorAll("[data-page]").forEach(link=>{if(link.closest(".top-nav"))return;link.addEventListener("click",e=>{e.preventDefault();showPage(link.dataset.page);});});
   $("#applicationTabs").addEventListener("click",e=>{const b=e.target.closest("[data-app]");if(!b)return;selectedApplication=b.dataset.app;renderApplicationTabs();renderApplicationPanel();});
   $("#applicationPanel").addEventListener("click",e=>{const b=e.target.closest("[data-course]");if(b)openCourse(b.dataset.course);});
   $("#backToCourses").addEventListener("click",closeCourse);
-  document.addEventListener("keydown",e=>{if(e.key==="/" && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)){e.preventDefault();$("#searchInput").focus();}});
+  window.addEventListener("hashchange",()=>{const hash=location.hash;showPage(hash==="#capabilities"?"capabilities":hash==="#application-paths"?"applications":"courses",false);});
+  document.addEventListener("keydown",e=>{if(e.key==="/" && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)){e.preventDefault();if(currentPage==="courses")$("#searchInput").focus();}});
 }
 init();

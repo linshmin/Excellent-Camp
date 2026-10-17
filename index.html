@@ -10,14 +10,14 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="卓越實戰營學習地圖首頁">
+    <a class="brand" href="#learning-map" data-page="courses" aria-label="卓越實戰營學習地圖首頁">
       <span class="brand-mark">ETC</span>
       <span><strong>卓越實戰營</strong><small>EXCELLENT TRAINING CAMP</small></span>
     </a>
     <nav class="top-nav" aria-label="主要導覽">
-      <a href="#learning-map">三階課程</a>
-      <a href="#capabilities">六大能力</a>
-      <a href="#application-paths">事業應用</a>
+      <a href="#learning-map" data-page="courses" class="active" aria-current="page">三階課程</a>
+      <a href="#capabilities" data-page="capabilities">六大能力</a>
+      <a href="#application-paths" data-page="applications">事業應用</a>
     </nav>
   </header>
 
@@ -27,7 +27,7 @@
       <div id="detailViewContent"></div>
     </section>
 
-    <section class="hero">
+    <section class="hero page-section page-courses">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> LEARN · APPLY · GROW</p>
         <h1>卓越實戰營<br><em>學習地圖</em></h1>
@@ -53,7 +53,7 @@
       <div class="hero-footer"><span>FOUNDATION</span><span>→</span><span>PRACTICE</span><span>→</span><span>GROWTH</span></div>
     </section>
 
-    <section class="section section-map" id="learning-map">
+    <section class="section section-map page-section page-courses" id="learning-map">
       <div class="section-heading">
         <div><p class="eyebrow">01 / LEARNING JOURNEY</p><h2>三階課程地圖</h2></div>
         <p>依照學習階段探索課程，也可以直接搜尋你想複習的主題。</p>
@@ -69,16 +69,17 @@
       <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>找不到符合的課程</h3><p>試試其他關鍵字，或清除篩選條件。</p></div>
     </section>
 
-    <section class="section capabilities-section" id="capabilities">
+    <section class="section capabilities-section page-section page-capabilities" id="capabilities">
       <div class="section-heading">
         <div><p class="eyebrow">02 / CORE CAPABILITIES</p><h2>六大事業經營能力</h2></div>
         <p>課程也可以從能力角度理解。選擇一項能力，查看相關課程。</p>
       </div>
       <div class="capability-grid" id="capabilityGrid"></div>
+      <div class="capability-detail hidden" id="capabilityDetail" aria-live="polite"></div>
       <p class="micro-note">能力分類為網站整理建議，課程可能同時對應多項能力；正式分類可依課程負責人確認後調整。</p>
     </section>
 
-    <section class="section application-section" id="application-paths">
+    <section class="section application-section page-section page-applications" id="application-paths">
       <div class="section-heading">
         <div><p class="eyebrow">03 / APPLY IN BUSINESS</p><h2>從經營問題找到課程</h2></div>
         <p>當你遇到實際問題，不必記住所有課程名稱；從想提升的能力開始找。</p>
@@ -89,7 +90,7 @@
       </div>
     </section>
 
-    <section class="closing-banner">
+    <section class="closing-banner page-section page-courses">
       <div><p class="eyebrow">LEARNING NEVER STOPS</p><h2>學會一項能力，<br>就多一種前進的方法。</h2><p>回到課程、練習、應用，再把經驗分享給夥伴。</p></div>
       <a class="button button-light" href="#learning-map">回到課程地圖 ↑</a>
       <span class="closing-decoration">ETC.</span>
@@ -97,7 +98,7 @@
   </main>
 
   <footer class="site-footer">
-    <a class="brand brand-footer" href="#"><span class="brand-mark">ETC</span><span><strong>卓越實戰營</strong><small>EXCELLENT TRAINING CAMP</small></span></a>
+    <a class="brand brand-footer" href="#learning-map" data-page="courses"><span class="brand-mark">ETC</span><span><strong>卓越實戰營</strong><small>EXCELLENT TRAINING CAMP</small></span></a>
     <p>卓越實戰營學習地圖 · 第一版</p>
     <p class="footer-disclaimer">本網站為學員學習整理用途，非任何公司官方網站或官方發布內容。課程名稱依提供的清單整理；學習目的與應用建議仍需依正式教材確認。</p>
   </footer>
